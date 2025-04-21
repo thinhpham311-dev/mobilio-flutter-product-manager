@@ -15,10 +15,10 @@ class ProductFactoryService {
         return product
     }
 
-    static async findAllProducts({ limit = 50, sort = "ctime", page = 1, filter = { isPublished: true, isDeleted: false } }) {
+    static async findAllProducts({ limit = 50, sort = "ctime", page = 1 }) {
         return await findAllProducts({
-            limit, sort, page, filter,
-            select: ['product_name', 'product_price', 'product_thumb', 'product_shop']
+            limit, sort, page,
+            select: ['product_name', 'product_price']
         })
     }
 }

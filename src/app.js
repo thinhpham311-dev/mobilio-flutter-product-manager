@@ -28,9 +28,7 @@ import "./dbs/mongodb.init.js"
 
 //init route 
 
-
 app.use("/", api)
-
 
 app.use((req, res, next) => {
     const error = new Error('Not Found')

@@ -16,10 +16,14 @@ class ProductController {
     }
 
     getListAllProduct = async (req, res, next) => {
-        new SuccessResponse({
-            messsage: "Get List All Product Success",
-            metadata: await ProductFactoryService.findAllProducts(req.query)
-        }).send(res)
+        try {
+            new SuccessResponse({
+                messsage: "Get List All Product Success",
+                metadata: await ProductFactoryService.findAllProducts(req.query)
+            }).send(res)
+        } catch (error) {
+            next(error)
+        }
     }
 
     //END QUERY
