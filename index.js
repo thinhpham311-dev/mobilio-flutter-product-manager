@@ -1,7 +1,7 @@
 import app from "./src/app.js";
 
-const server = app.listen(3055, () => {
-    console.log("start");
+const server = app.listen(3000, () => {
+    console.log("start http://localhost:3000");
 });
 
 process.on('SIGINT', async () => {

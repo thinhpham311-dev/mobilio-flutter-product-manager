@@ -4,7 +4,6 @@ import ApiKey from "../models/apiKey.model.js"
 
 class ApiKeyService {
     static findById = async (key) => {
-
         // const newKey = await ApiKey.create({ key: crypto.randomBytes(64).toString('hex'), permissions: ['0000'] })
         // console.log(newKey)
         return await ApiKey.findOne({ key, status: true }).lean();
